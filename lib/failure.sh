@@ -314,6 +314,7 @@ warn_young_yarn() {
   if $YARN; then
     warning "This project was built with yarn, which is new and under development. Some projects can still be built more reliably with npm" "https://devcenter.heroku.com/articles/nodejs-support#build-behavior"
     mcount 'warnings.yarn.young'
+    cat yarn-error.log || true
   fi
 }
 
